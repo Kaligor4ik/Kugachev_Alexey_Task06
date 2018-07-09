@@ -9,18 +9,22 @@ namespace Task02.Actors
 {
     abstract class BaseActor
     {
+        private const int DefaultIncrement = 1;
         private Point position;
+        private int stepLength;
 
         public BaseActor(Point p)
         {
             position = p;
+            stepLength = DefaultIncrement;
         }
 
         public Point Position { get => position; }
-        public void MoveLeft() => position.X--;
-        public void MoveRight() => position.X++;
-        public void MoveUp() => position.Y++;
-        public void MoveDown() => position.Y--;
+        public int StepLength { get => stepLength; set => stepLength = value; }
+        public void MoveLeft() => position.X = position.X - StepLength;
+        public void MoveRight() => position.X = position.X + StepLength;
+        public void MoveUp() => position.Y = position.Y + StepLength;
+        public void MoveDown() => position.Y = position.Y - StepLength;
 
         public abstract void Draw();
     }

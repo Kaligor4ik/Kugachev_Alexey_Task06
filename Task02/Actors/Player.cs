@@ -16,5 +16,20 @@ namespace Task02.Actors
         {
             throw new NotImplementedException();
         }
+
+        public void SetTemporaryLvlUp(int increment)
+        {
+            StepLength = increment;
+        }
+
+        public void CountBenefits()
+        {
+            //GameOver
+        }
+
+        public void Kill()
+        {
+            //GameOver
+        }
     }
 }
